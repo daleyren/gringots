@@ -124,3 +124,32 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+  .text-shadow-md {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+.animate-bg-gradient {
+  background: radial-gradient(circle, #4b4949, #7c7773, #615e5c);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  @apply overflow-hidden;
+}
