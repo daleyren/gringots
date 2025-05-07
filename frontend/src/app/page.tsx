@@ -10,7 +10,7 @@ export default function LandingPage() {
         <NavBar />
       </header>
 
-      <main className="flex flex-col items-center justify-center min-h-screen bg-zinc-900 text-zinc-100 px-4 pt-20 scroll-smooth">
+      <main className="flex flex-col items-center justify-center min-h-screen bg-zinc-900 text-zinc-100 px-4 scroll-smooth">
         {/* Hero */}
         <div className="flex flex-row items-center justify-center h-screen">
           <section className="text-center animate-fade-up duration-1000">
@@ -32,50 +32,8 @@ export default function LandingPage() {
                 </Button>
               </Link>
             </div>
-
-            {/* Scroll hint */}
-            <div className="mt-16 animate-bounce text-zinc-500">
-              <Link href="#features" aria-label="Scroll down">
-                ↓
-              </Link>
-            </div>
           </section>
         </div>
-
-        {/* Features */}
-        <section id="features" className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 text-center animate-fade-up duration-1000 delay-200">
-          <div>
-            <h3 className="text-xl font-semibold text-white">By Firm</h3>
-            <p className="text-zinc-400 mt-2">Filter real questions by firm — Goldman Sachs, PJT, Evercore, and more.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white">Questions + Answers</h3>
-            <p className="text-zinc-400 mt-2">Detailed explanations written by past candidates who got the offer.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white">UChicago Founded</h3>
-            <p className="text-zinc-400 mt-2">Created by UChicago students to help you stand out where it matters most.</p>
-          </div>
-        </section>
-
-        {/* How it works */}
-        <section className="mt-32 text-center max-w-2xl animate-fade-up duration-1000 delay-300">
-          <h2 className="text-2xl font-semibold mb-6 text-white">How it works</h2>
-          <ol className="text-zinc-400 text-lg space-y-4 list-decimal list-inside">
-            <li>Choose a firm or category.</li>
-            <li>Practice with real questions.</li>
-            <li>Read explanations written by successful candidates.</li>
-            <li>Go in confident and ready to impress.</li>
-          </ol>
-        </section>
-
-        {/* Footer */}
-        <footer className="mt-32 text-sm text-zinc-500 pb-12 animate-fade-up duration-1000 delay-500">
-          Built by UChicago students •{" "}
-          <Link href="mailto:contact@ibprep.com" className="underline hover:text-white transition">
-            Contact
-          </Link>
-        </footer>
       </main>
     </>
   )
