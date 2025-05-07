@@ -10,14 +10,21 @@ export function NavBar({ className, ...props }: NavBarProps) {
   return (
     <div
       className={cn(
-        "flex items-center justify-between h-16 px-8 border-b border-gray-700 bg-zinc-1000 text-white",
+        "flex items-center justify-between h-16 px-8 border-b-2 border-zinc-400 bg-zinc-1000 text-white",
         className
       )}
       {...props}
     >
       {/* Logo */}
       <Link href="/" className="flex items-center space-x-2 ml-5">
-        <Image src="/levered_logo.png" alt="Logo" width={60} height={32} />
+        <Image
+          src="/levered_logo.png"
+          alt="Levered logo"
+          width={60}
+          height={32}
+          className="hover:opacity-80 transition"
+          priority
+        />
       </Link>
 
       {/* Right-side links */}
