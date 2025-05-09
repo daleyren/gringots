@@ -64,26 +64,27 @@ export default function QuestionListPage() {
         <NavBar />
       </header>
 
-      <main className="bg-zinc-800 min-h-screen pt-20 px-6 text-zinc-100">
+      <main className="bg-zinc-800 min-h-screen pt-10 px-6 text-zinc-100">
         <div className="max-w-5xl mx-auto mt-16">
           <h1 className="text-3xl font-semibold text-white mb-6">Question Bank</h1>
           <div className="w-full overflow-x-auto">
-            <table className="w-full text-left border-separate border-spacing-y-4">
-              <thead>
+            <table className="w-full text-left">
+              {/* <thead className="border-b-2 border-zinc-400">
                 <tr className="text-sm text-zinc-400">
-                  <th className="px-2">#</th>
-                  <th className="px-2">Title</th>
-                  <th className="px-2">Difficulty</th>
-                  <th className="px-2 text-center">Star</th>
+                  <th className="px-2 py-3 text-center">#</th>
+                  <th className="px-2 py-3">Title</th>
+                  <th className="px-2 py-3">Difficulty</th>
+                  <th className="px-2 py-3 text-center">Star</th>
                 </tr>
-              </thead>
+              </thead> */}
               <tbody>
                 {questions.map((q) => (
                   <tr
                     key={q.id}
-                    className="bg-zinc-800 hover:bg-zinc-700 transition rounded-md text-sm"
+                    className="transition text-sm even:bg-zinc-800 odd:bg-zinc-900 rounded-md"
                   >
-                    <td className="px-2 py-3">{q.id}</td>
+                    <td className="px-2 py-3 text-center">                     
+                      {q.id}</td>
                     <td className="px-2 py-3 font-medium text-white">{q.title}</td>
                     <td className="px-2 py-3">
                       <span

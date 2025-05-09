@@ -10,7 +10,7 @@ export function NavBar({ className, ...props }: NavBarProps) {
   return (
     <div
       className={cn(
-        "flex items-center justify-between h-16 px-8 border-b-2 border-zinc-400 bg-zinc-1000 text-white",
+        "flex items-center justify-between h-16 px-8 bg-zinc-1000 text-white",
         className
       )}
       {...props}
