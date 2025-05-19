@@ -21,7 +21,7 @@ export default function LandingPage() {
               Real questions from top firms. Expert explanations. <br/> Built by UChicago students who’ve been there.
             </p>
             <div className="mt-8 flex gap-4 justify-center">
-              <Link href="/problems">
+              <Link href="/problemset">
                 <Button size="lg" className="bg-white text-black hover:bg-zinc-200 transition">
                   Start Practicing
                 </Button>

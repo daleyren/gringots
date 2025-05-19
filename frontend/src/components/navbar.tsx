@@ -10,7 +10,7 @@ export function NavBar({ className, ...props }: NavBarProps) {
   return (
     <div
       className={cn(
-        "flex items-center justify-between h-16 px-8 bg-zinc-1000 text-white",
+        "flex items-center justify-between h-14 px-8 bg-zinc-1000 text-white",
         className
       )}
       {...props}
@@ -21,7 +21,7 @@ export function NavBar({ className, ...props }: NavBarProps) {
           src="/levered_logo.png"
           alt="Levered logo"
           width={60}
-          height={32}
+          height={25}
           className="hover:opacity-80 transition"
           priority
         />
@@ -29,11 +29,11 @@ export function NavBar({ className, ...props }: NavBarProps) {
 
       {/* Right-side links */}
       <div className="flex items-center space-x-6">
-        <Link href="/problems" className="text-sm font-medium hover:text-gray-300">
+        <Link href="/problemset" className="text-sm font-medium hover:text-gray-300">
           Problems
         </Link>
-        <Button variant="secondary">
-          <Link href="/signin">Sign In / Register</Link>
+        <Button variant="secondary" className="text-sm h-8">
+          <Link href="/accounts/login">Sign In / Register</Link>
         </Button>
       </div>
     </div>

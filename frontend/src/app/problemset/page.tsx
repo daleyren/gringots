@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { Star } from "lucide-react"
 import { NavBar } from "@/components/navbar"
-
+import CompanyBadgePanel from "@/components/companies-badge"
+import ProgressBadgePanel from "@/components/progress-badge"
 type Difficulty = "Easy" | "Medium" | "Hard"
 
 type Question = {
@@ -65,54 +66,63 @@ export default function QuestionListPage() {
       </header>
 
       <main className="bg-zinc-800 min-h-screen pt-10 px-6 text-zinc-100">
-        <div className="max-w-5xl mx-auto mt-16">
-          <h1 className="text-3xl font-semibold text-white mb-6">Question Bank</h1>
-          <div className="w-full overflow-x-auto">
-            <table className="w-full text-left">
-              {/* <thead className="border-b-2 border-zinc-400">
-                <tr className="text-sm text-zinc-400">
-                  <th className="px-2 py-3 text-center">#</th>
-                  <th className="px-2 py-3">Title</th>
-                  <th className="px-2 py-3">Difficulty</th>
-                  <th className="px-2 py-3 text-center">Star</th>
-                </tr>
-              </thead> */}
-              <tbody>
-                {questions.map((q) => (
-                  <tr
-                    key={q.id}
-                    className="transition text-sm even:bg-zinc-800 odd:bg-zinc-900 rounded-md"
-                  >
-                    <td className="px-2 py-3 text-center">                     
-                      {q.id}</td>
-                    <td className="px-2 py-3 font-medium text-white">{q.title}</td>
-                    <td className="px-2 py-3">
-                      <span
-                        className={
-                          q.difficulty === "Easy"
-                            ? "text-green-400"
-                            : q.difficulty === "Medium"
-                            ? "text-yellow-400"
-                            : "text-red-400"
-                        }
-                      >
-                        {q.difficulty}
-                      </span>
-                    </td>
-                    <td className="px-2 py-3 text-center">
-                      <button onClick={() => toggleStar(q.id)} aria-label="Toggle Star">
-                        <Star
-                          size={18}
-                          className={`${
-                            q.starred ? "fill-yellow-400 stroke-yellow-400" : "stroke-zinc-400"
-                          } hover:scale-110 transition`}
-                        />
-                      </button>
-                    </td>
+        <div className="flex gap-6">
+          {/* Left column: Question Bank */}
+          <div className="min-w-4xl mx-auto mt-16">
+            {/* <h1 className="text-3xl font-semibold text-white mb-6">Question Bank</h1> */}
+            <div className="w-full overflow-x-auto">
+              <table className="w-full text-left">
+                {/* <thead className="border-b-2 border-zinc-400">
+                  <tr className="text-sm text-zinc-400">
+                    <th className="px-2 py-3 text-center">#</th>
+                    <th className="px-2 py-3">Title</th>
+                    <th className="px-2 py-3">Difficulty</th>
+                    <th className="px-2 py-3 text-center">Star</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead> */}
+                <tbody>
+                  {questions.map((q) => (
+                    <tr
+                      key={q.id}
+                      className="transition text-sm even:bg-zinc-800 odd:bg-zinc-900 rounded-md"
+                    >
+                      <td className="px-2 py-3 text-center">                     
+                        {q.id}</td>
+                      <td className="px-2 py-3 font-medium text-white">{q.title}</td>
+                      <td className="px-2 py-3">
+                        <span
+                          className={
+                            q.difficulty === "Easy"
+                              ? "text-green-400"
+                              : q.difficulty === "Medium"
+                              ? "text-yellow-400"
+                              : "text-red-400"
+                          }
+                        >
+                          {q.difficulty}
+                        </span>
+                      </td>
+                      <td className="px-2 py-3 text-center">
+                        <button onClick={() => toggleStar(q.id)} aria-label="Toggle Star">
+                          <Star
+                            size={18}
+                            className={`${
+                              q.starred ? "fill-yellow-400 stroke-yellow-400" : "stroke-zinc-400"
+                            } hover:scale-110 transition`}
+                          />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Right column: Company Badge Panel */}
+          <div className="mx-auto mt-16 gap-4 flex flex-col">
+            <CompanyBadgePanel />
+            <ProgressBadgePanel />
           </div>
         </div>
       </main>
